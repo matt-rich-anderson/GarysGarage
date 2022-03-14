@@ -2,18 +2,17 @@ using System;
 
 namespace Garage
 {
-    public class Cessna : Vehicle
+    public class Cessna : Vehicle, IGasVehicle
     {
         public double FuelCapacity { get; set; }
 
         public void RefuelTank()
         {
-            // method definition omitted
+            FuelCapacity = 100.00;
         }
-
-        public override void Drive()
+        public double CurrentTankPercentage()
         {
-            Console.WriteLine("Bzzzzzzzz!");
+            return FuelCapacity;            
         }
     }
 }

@@ -2,17 +2,17 @@ using System;
 
 namespace Garage
 {
-    public class Tesla : Vehicle
+    public class Tesla : Vehicle, IElectricVehicle
     {
         public double BatteryKWh { get; set; }
 
         public void ChargeBattery()
         {
-            // method definition omitted
+            BatteryKWh = 100.00;
         }
-        public override void Drive()
+        public double CurrentChargePercentage()
         {
-            Console.WriteLine("Shwoooooooo!");
+            return BatteryKWh;            
         }
     }
 }
